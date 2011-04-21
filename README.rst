@@ -13,8 +13,8 @@ in your path, then execute the following commands::
   $ qmake
   $ make
 
-*If you are compiling on Windows with the VC++ compiler, replace ``make`` with
-``nmake``.*
+*If you are compiling on Windows with the VC++ compiler, replace* ``make``
+*with* ``nmake``.
 
 After compiling, you can launch FTPNotes with the following command::
 

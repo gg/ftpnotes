@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" targetNamespace="http://www.fulltiltpoker.com/schemas/client" xmlns:mstns="http://www.fulltiltpoker.com/schemas/client" xmlns="http://www.fulltiltpoker.com/schemas/client" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="PLAYERDATA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="NOTES" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NOTE" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="PlayerId" form="unqualified" type="xs:string" />
+                  <xs:attribute name="Text" form="unqualified" type="xs:string" />
+                  <xs:attribute name="ColourIx" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="PLAYERDATA" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

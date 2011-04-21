@@ -2,9 +2,7 @@ FTPNotes
 ========
 A simple graphical Full Tilt Poker notes editor.
 
-.. image:: http://i.imgur.com/qfspM.png
-
-.. image:: http://i.imgur.com/3eDwh.png
+.. image:: http://i.imgur.com/nqG66.png
 
 Compiling
 ^^^^^^^^^

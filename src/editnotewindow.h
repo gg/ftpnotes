@@ -31,12 +31,9 @@ class EditNoteWindow : public QDialog {
  private:
   void Initialize();
   void InitializeColorPicker();
-  void InitializeButtonBox();
 
   QScopedPointer<Ui::EditNoteWindow> window_;
   Note note_;
-  QPushButton* save_button_;
-  QPushButton* delete_button_;
 
  private slots:
   void OnNoteColorIdChanged(int color_id);

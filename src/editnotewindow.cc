@@ -7,9 +7,7 @@
 namespace ftpnotes {
 
 EditNoteWindow::EditNoteWindow(const Note& note, QWidget* parent)
-    : QDialog(parent), window_(new Ui::EditNoteWindow), note_(note),
-      save_button_(new QPushButton(tr("&Save"), this)),
-      delete_button_(new QPushButton(tr("&Delete"), this)) {
+    : QDialog(parent), window_(new Ui::EditNoteWindow), note_(note) {
   Initialize();
 }
 
@@ -17,7 +15,6 @@ void EditNoteWindow::Initialize() {
   window_->setupUi(this);
 
   InitializeColorPicker();
-  InitializeButtonBox();
 
   window_->textEdit->setText(note_.text);
 
@@ -27,10 +24,14 @@ void EditNoteWindow::Initialize() {
 
   connect(window_->colorPicker, SIGNAL(currentIndexChanged(int)), this,
           SLOT(OnNoteColorIdChanged(int)));
+
   connect(window_->textEdit, SIGNAL(textChanged()), this,
           SLOT(OnNoteTextChanged()));
-  connect(save_button_, SIGNAL(clicked()), this, SLOT(OnSaveClicked()));
-  connect(delete_button_, SIGNAL(clicked()), this, SLOT(OnDeleteClicked()));
+
+  connect(window_->saveButton, SIGNAL(clicked()), this, SLOT(OnSaveClicked()));
+
+  connect(window_->deleteButton, SIGNAL(clicked()), this,
+          SLOT(OnDeleteClicked()));
 
   window_->textEdit->setFocus();
 }
@@ -48,11 +49,6 @@ void EditNoteWindow::InitializeColorPicker() {
   }
 
   window_->colorPicker->setCurrentIndex(note_.color_id);
-}
-
-void EditNoteWindow::InitializeButtonBox() {
-  window_->buttonBox->addButton(save_button_, QDialogButtonBox::ActionRole);
-  window_->buttonBox->addButton(delete_button_, QDialogButtonBox::ActionRole);
 }
 
 void EditNoteWindow::OnNoteColorIdChanged(int color_id) {

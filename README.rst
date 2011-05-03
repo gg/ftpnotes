@@ -8,7 +8,7 @@ Compiling
 ^^^^^^^^^
 FTPNotes depends on Qt 4.6 and above. You can download the Qt SDK at
 http://qt.nokia.com/downloads/. After Qt is installed, ensure that ``qmake`` is
-in your path, then execute the following commands::
+in your PATH, then execute the following commands::
 
   $ qmake
   $ make
